@@ -1,0 +1,116 @@
+
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<title>İyi ki Doğdun Berru 🎉</title>
+<style>
+body{
+    margin:0;
+    height:100vh;
+    background:
+      linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)),
+      url('berru-bg.png') center/cover no-repeat;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-family:'Segoe UI', Arial, sans-serif;
+    overflow:hidden;
+}
+
+.card{
+    background: rgba(255,255,255,0.92);
+    padding:45px 65px;
+    border-radius:25px;
+    text-align:center;
+    box-shadow:0 30px 60px rgba(0,0,0,0.4);
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float{
+    0%,100%{transform:translateY(0);}
+    50%{transform:translateY(-10px);}
+}
+
+h1{
+    font-size:42px;
+    margin-bottom:10px;
+}
+
+.name{
+    color:#ff3d81;
+}
+
+p{
+    font-size:18px;
+    color:#444;
+}
+
+.buttons{
+    margin-top:25px;
+    display:flex;
+    gap:12px;
+    justify-content:center;
+    flex-wrap:wrap;
+}
+
+button{
+    padding:12px 18px;
+    border:none;
+    border-radius:14px;
+    font-size:15px;
+    cursor:pointer;
+    background:linear-gradient(135deg,#ff4d6d,#ff85a1);
+    color:white;
+    box-shadow:0 8px 15px rgba(0,0,0,0.25);
+    transition:.2s;
+}
+
+button:hover{
+    transform:scale(1.08);
+}
+
+.effect{
+    position:absolute;
+    font-size:48px;
+    animation: fly 2.5s ease-out forwards;
+}
+
+@keyframes fly{
+    0%{transform:scale(0.3);opacity:0;}
+    20%{opacity:1;}
+    100%{transform:scale(1.3) translateY(-400px);opacity:0;}
+}
+</style>
+</head>
+<body>
+
+<div class="card">
+    <h1>🎉 İyi ki doğdun <span class="name">Berru</span> 🎂</h1>
+    <p>Bugün senin günün ✨</p>
+    <p>Nice mutlu, sağlıklı ve bol kahkahalı yaşlara 💖</p>
+
+    <div class="buttons">
+        <button onclick="party('😎')">Cool</button>
+        <button onclick="party('✨')">Işık</button>
+        <button onclick="party('🎂')">Pasta</button>
+        <button onclick="party('🎉')">PARTY</button>
+    </div>
+</div>
+
+<script>
+function party(emoji){
+    for(let i=0;i<12;i++){
+        const e=document.createElement("div");
+        e.className="effect";
+        e.innerText=emoji;
+        e.style.left=Math.random()*100+"vw";
+        e.style.top=Math.random()*100+"vh";
+        document.body.appendChild(e);
+        setTimeout(()=>e.remove(),2500);
+    }
+}
+</script>
+
+</body>
+</html>
